@@ -3,15 +3,28 @@
 <head>
 <title> Calculator +______+ </title>
 <meta chartset = "utf-8">
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script type="text/javascript" src="calculator.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!--<script type="text/javascript" src="src/calculator.js"></script>-->
+<script src="system.js"></script>
+<script type="text/javascript">
+		SystemJS.config({
+				baseURL: './src',
+				packages: { 
+						'.': { 
+								format: 'system',
+								defaultExtension: 'js' 
+						} 
+				}
+		});
+		SystemJS.import('calculator.js');
+	</script>
 </head>
 <body>
 
 <form id="calculator" name="calculator">
 
 	<div class="header">		
-		<input type="text" name="screen" value="" class="screen borderR_tr borderR_tl">
+		<input type="text" id="screen" name="screen" value="" class="screen borderR_tr borderR_tl">
 	</div>
 	
 	<div class="keys">
